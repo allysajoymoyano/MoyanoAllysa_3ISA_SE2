@@ -1,18 +1,8 @@
-//make directory asynch 
-fs.mkdir(dirname, function () {  //fs.mkdir is a method used to create a directory asynchronously. //the function call back 
-    fs.readFile(read, "utf8", function (err, data) { //function call back 
-      if (err) {
-        console.log("File not found");
-      } else {
-        console.log(dirname + " is created");
-      }
-      fs.writeFile(dirname + write, data, function (err) {
-        if (err) {
-          console.log("Directory does not exist......");
-        } else {
-          console.log(write + " is written at " + dirname);
-        }
-      });
-    });
-  });
-  
+var fs = require("fs"); 
+
+fs.readFile("info.txt", "utf-8", (err, data) => {
+    if (err) { console.log(err) }
+    console.log(data);
+});
+
+console.log('File');
